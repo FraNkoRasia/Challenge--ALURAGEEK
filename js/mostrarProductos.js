@@ -76,22 +76,25 @@ function agregarEventListeners() {
     });
 
     const botonesEditar = document.querySelectorAll(".btn-edit");
-    botonesEditar.forEach(boton => {
-        boton.addEventListener("click", (event) => {
-            currentEditingProductId = event.target.closest(".btn-edit").dataset.id;
-            const productoElement = document.querySelector(`.contenedor-producto[data-id="${currentEditingProductId}"]`);
-            const nombre = productoElement.querySelector('.nombreProducto').textContent;
-            const precio = productoElement.querySelector('.precioProducto').textContent.replace('$', '');
-            const imagen = productoElement.querySelector('.imagen-producto').src;
+botonesEditar.forEach(boton => {
+    boton.addEventListener("click", (event) => {
+        event.preventDefault(); // Evitar que la página se recargue
 
-            document.getElementById('editNombre').value = nombre;
-            document.getElementById('editPrecio').value = precio;
-            document.getElementById('editImagen').value = imagen;
-            document.getElementById('editId').value = currentEditingProductId;
+        currentEditingProductId = event.target.closest(".btn-edit").dataset.id;
+        const productoElement = document.querySelector(`.contenedor-producto[data-id="${currentEditingProductId}"]`);
+        const nombre = productoElement.querySelector('.nombreProducto').textContent;
+        const precio = productoElement.querySelector('.precioProducto').textContent.replace('$', '');
+        const imagen = productoElement.querySelector('.imagen-producto').src;
 
-            editModal.style.display = "block";
-        });
+        document.getElementById('editNombre').value = nombre;
+        document.getElementById('editPrecio').value = precio;
+        document.getElementById('editImagen').value = imagen;
+        document.getElementById('editId').value = currentEditingProductId;
+
+        editModal.style.display = "block";
     });
+});
+
 
     spanClose.forEach(span => {
         span.addEventListener("click", () => {
