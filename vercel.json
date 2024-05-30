@@ -1,0 +1,20 @@
+{
+    "rewrites": [
+        {
+            "source": "/cargarProducto",
+            "destination": "/cargarProducto.html"
+        },
+        {
+            "source": "/comprar",
+            "destination": "/comprar.html"
+        },
+        {
+            "source": "/",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/:path*",
+            "destination": "/:path*.html"
+        }
+    ]
+}
