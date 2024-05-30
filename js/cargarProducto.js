@@ -11,7 +11,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
 
     try {
         // Obtener la lista de productos para encontrar el ID más alto
-        const response = await fetch('http://localhost:3000/productos');
+        const response = await fetch('https://challenge-alurageek-eta.vercel.app/productos');
         const productos = await response.json();
 
         // Encontrar el ID más alto
@@ -34,7 +34,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
         };
 
         // Enviar el nuevo producto al servidor
-        const postResponse = await fetch('http://localhost:3000/productos', {
+        const postResponse = await fetch('https://challenge-alurageek-eta.vercel.app/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -57,7 +57,7 @@ function agregarEventListeners() {
         boton.addEventListener("click", async (event) => {
             const id = event.target.closest(".btn-delete").dataset.id;
             try {
-                const response = await fetch(`http://localhost:3000/productos/${id}`, {
+                const response = await fetch(`https://challenge-alurageek-eta.vercel.app/productos/${id}`, {
                     method: 'DELETE',
                 });
 
@@ -121,7 +121,7 @@ function agregarEventListeners() {
         };
 
         try {
-            const response = await fetch(`http://localhost:3000/productos/${id}`, {
+            const response = await fetch(`https://challenge-alurageek-eta.vercel.app/productos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
