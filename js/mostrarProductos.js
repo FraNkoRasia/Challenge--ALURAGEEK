@@ -93,13 +93,14 @@ function agregarEventListeners() {
         });
     });
 
-       const productos = document.querySelectorAll(".contenedor-producto");
-    productos.forEach(producto => {
-        producto.addEventListener("click", () => {
-            const id = producto.dataset.id;
-            const nombre = producto.querySelector('.nombreProducto').textContent;
-            const precio = producto.querySelector('.precioProducto').textContent;
-            const imagen = producto.querySelector('.imagen-producto').src;
+      const imagenesProducto = document.querySelectorAll(".contenedor-producto .imagen-producto");
+    imagenesProducto.forEach(imagen => {
+        imagen.addEventListener("click", (event) => {
+            const productoElement = event.target.closest(".contenedor-producto");
+            const id = productoElement.dataset.id;
+            const nombre = productoElement.querySelector('.nombreProducto').textContent;
+            const precio = productoElement.querySelector('.precioProducto').textContent;
+            const imagen = productoElement.querySelector('.imagen-producto').src;
             
             const productoSeleccionado = {
                 id: id,
