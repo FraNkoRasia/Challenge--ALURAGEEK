@@ -57,7 +57,7 @@ function agregarEventListeners() {
         boton.addEventListener("click", async (event) => {
             const id = event.target.closest(".btn-delete").dataset.id;
             try {
-                const response = await fetch(`https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos/${id}`, {
+                const response = await fetch(`https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos/${id}`, {
                     method: 'DELETE',
                 });
 
@@ -121,7 +121,7 @@ function agregarEventListeners() {
         };
 
         try {
-            const response = await fetch(`https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos/${id}`, {
+            const response = await fetch(`https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

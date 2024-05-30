@@ -7,11 +7,11 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
 
     // Por simplicidad, usaremos un placeholder para la ruta de la imagen
     // En una aplicación real, manejarías la carga de la imagen y obtendrías la URL de la imagen
-    const imagePath = imagen;
+    const imagePath =imagen;
 
     try {
         // Obtener la lista de productos para encontrar el ID más alto
-        const response = await fetch('https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos.json');
+        const response = await fetch('https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos');
         const productos = await response.json();
 
         // Encontrar el ID más alto
@@ -34,8 +34,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
         };
 
         // Enviar el nuevo producto al servidor
-     
-        const postResponse = await fetch('https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos.json', {
+        const postResponse = await fetch('https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,3 +54,5 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
         alert('Error al cargar el producto');
     }
 });
+
+
