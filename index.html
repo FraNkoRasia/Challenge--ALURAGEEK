@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/reset.css">
+    <link rel="stylesheet" href="Css/hamburguesa.css">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Challenge AluraGeek</title>
+</head>
+
+<body>
+    <input id="toggler" type="checkbox">
+    <nav>
+        <div class="logo">
+            <a href="index.html"> <img src="Img/iconos/logo.png" alt="logo">
+                <p>ALURAGEEK</p>
+            </a>
+        </div>
+        <label for="toggler" class="hamb">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <ul>
+            <li><a href="index.html" class="navigation__link">PRODUCTOS</a></li>
+            <li><a href="cargarProducto.html" class="navigation__link">CARGAR PRODUCTOS</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="titulo-productos">MIS PRODUCTOS</h1>
+        <section class="section-index" data-lista></section>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Producto</h2>
+                <form id="formEditarProducto">
+                    <div>
+                        <label class="label" for="editNombre">Nombre</label>
+                        <input type="text" name="nombre" id="editNombre" required>
+                    </div>
+        
+                    <div>
+                        <label class="label" for="editPrecio">Precio</label>
+                        <input type="number" name="precio" id="editPrecio" required>
+                    </div>
+        
+                    <div>
+                        <label class="label" for="editImagen">Imagen</label>
+                        <input type="text" name="imagen" id="editImagen" required>
+                    </div>
+                    
+                    <input type="hidden" id="editId">
+                    <div class="button-group">
+                        <button type="submit">Guardar</button>
+                        <button type="button" class="close btn-cancel">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>ALURAGEEK</p>
+        <p>Desarrollado por | Franco Rasia</p>
+        <p>ALURA LATAM 2024</p>
+        <div class="redes">
+            <a href="https://github.com/FraNkoRasia?tab=repositories"><img src="Img/iconos/github.png" alt="Icono de GitHub"></a>
+            <a href="https://www.linkedin.com/in/francorasia/"><img src="Img/iconos/kinkedin.png" alt="Icono de LinkedIn"></a>
+            <a href="https://t.me/FraNNkop"><img src="Img/iconos/telegram.png" alt="Icono de Telegram"></a>
+            <a href="https://wa.me/543583415501"><img src="Img/iconos/whatsapp.png" alt="Icono de WhatsApp"></a>
+        </div>
+    </footer>
+    
+    <script type="module" src="js/mostrarProductos.js"></script>
+    <script src="js/delayRedirect.js"></script>
+</body>
+
+</html>
