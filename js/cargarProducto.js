@@ -11,7 +11,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
 
     try {
         // Obtener la lista de productos para encontrar el ID más alto
-        const response = await fetch('/productos');
+        const response = await fetch('https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos.json');
         const productos = await response.json();
 
         // Encontrar el ID más alto
@@ -34,7 +34,8 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
         };
 
         // Enviar el nuevo producto al servidor
-        const postResponse = await fetch('/productos', {
+     
+        const postResponse = await fetch('https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos.json', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

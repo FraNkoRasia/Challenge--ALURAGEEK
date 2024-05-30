@@ -1,5 +1,5 @@
 async function listarProductos() {
-    const conexion = await fetch("/productos");
+     const response = await fetch('https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos.json');
 
     const conexionConvertida = conexion.json();
     // console.log(conexionConvertida);

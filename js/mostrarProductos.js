@@ -57,7 +57,10 @@ function agregarEventListeners() {
         boton.addEventListener("click", async (event) => {
             const id = event.target.closest(".btn-delete").dataset.id;
             try {
-                const response = await fetch(`/productos/${id}`, { method: 'DELETE' });
+                const response = await fetch(`https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos/${id}`, {
+                    method: 'DELETE',
+                });
+
                 if (response.ok) {
                     alert('Producto eliminado con éxito');
                     const productoElement = document.querySelector(`.contenedor-producto[data-id="${id}"]`);
@@ -118,7 +121,7 @@ function agregarEventListeners() {
         };
 
         try {
-            const response = await fetch(`/productos/${id}`, {
+            const response = await fetch(`https://raw.githubusercontent.com/FraNkoRasia/Challenge--ALURAGEEK/main/productos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
