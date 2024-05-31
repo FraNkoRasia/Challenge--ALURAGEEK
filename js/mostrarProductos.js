@@ -32,7 +32,7 @@ function crearCard(id, imagen, nombre, precio) {
 async function listarProductos() {
     try {
         const productos = await conexionAPI.listarProductos();
-        console.log('Datos a procesar:', productos); // Confirmar la estructura de los datos
+        console.log('Datos a procesar:', productos);
 
         if (productos.length === 0) {
             const mensaje = document.createElement("p");
@@ -51,6 +51,7 @@ async function listarProductos() {
     }
 }
 
+// Función para agregar el evento al boton de ELIMINAR
 function agregarEventListeners() {
     const botonesEliminar = document.querySelectorAll(".btn-delete");
     botonesEliminar.forEach(boton => {
@@ -76,24 +77,24 @@ function agregarEventListeners() {
     });
 
     const botonesEditar = document.querySelectorAll(".btn-edit");
-botonesEditar.forEach(boton => {
-    boton.addEventListener("click", (event) => {
-        event.preventDefault(); // Evitar que la página se recargue
+    botonesEditar.forEach(boton => {
+        boton.addEventListener("click", (event) => {
+            event.preventDefault();
 
-        currentEditingProductId = event.target.closest(".btn-edit").dataset.id;
-        const productoElement = document.querySelector(`.contenedor-producto[data-id="${currentEditingProductId}"]`);
-        const nombre = productoElement.querySelector('.nombreProducto').textContent;
-        const precio = productoElement.querySelector('.precioProducto').textContent.replace('$', '');
-        const imagen = productoElement.querySelector('.imagen-producto').src;
+            currentEditingProductId = event.target.closest(".btn-edit").dataset.id;
+            const productoElement = document.querySelector(`.contenedor-producto[data-id="${currentEditingProductId}"]`);
+            const nombre = productoElement.querySelector('.nombreProducto').textContent;
+            const precio = productoElement.querySelector('.precioProducto').textContent.replace('$', '');
+            const imagen = productoElement.querySelector('.imagen-producto').src;
 
-        document.getElementById('editNombre').value = nombre;
-        document.getElementById('editPrecio').value = precio;
-        document.getElementById('editImagen').value = imagen;
-        document.getElementById('editId').value = currentEditingProductId;
+            document.getElementById('editNombre').value = nombre;
+            document.getElementById('editPrecio').value = precio;
+            document.getElementById('editImagen').value = imagen;
+            document.getElementById('editId').value = currentEditingProductId;
 
-        editModal.style.display = "block";
+            editModal.style.display = "block";
+        });
     });
-});
 
 
     const imagenesProducto = document.querySelectorAll(".contenedor-producto .imagen-producto");
@@ -104,7 +105,7 @@ botonesEditar.forEach(boton => {
             const nombre = productoElement.querySelector('.nombreProducto').textContent;
             const precio = productoElement.querySelector('.precioProducto').textContent;
             const imagen = productoElement.querySelector('.imagen-producto').src;
-            
+
             const productoSeleccionado = {
                 id: id,
                 nombre: nombre,
@@ -116,7 +117,7 @@ botonesEditar.forEach(boton => {
             window.location.href = 'comprar.html'; // Redirigir a la página de compra
         });
     });
-    
+
     spanClose.forEach(span => {
         span.addEventListener("click", () => {
             editModal.style.display = "none";
