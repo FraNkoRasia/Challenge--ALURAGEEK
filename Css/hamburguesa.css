@@ -73,16 +73,15 @@ nav ul li a {
 /*Menu checker label & hamburger display (no display in desktop)*/
 .hamb {
   display: none;
-  width: 50px;
-  height: 35px;
+  width: 40px;
+  height: 25px;
   top: 0;
   right: 0;
   position: relative;
-  z-index: 1000;
+  z-index: 3;
 
   &:hover {
     cursor: pointer;
-    transform: scale(0.7);
   }
 
   transition: all .5s ease-in-out;
@@ -128,6 +127,7 @@ nav ul li a {
     background: #000000;
     transition: 0.5s;
     overflow: hidden;
+    z-index: 2;
   }
 
   nav ul li a {
