@@ -1,4 +1,4 @@
-@import url('link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
 
 :root {
@@ -38,10 +38,33 @@ main {
 
 .no-productos {
     margin-top: 2rem;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: rgb(233, 99, 99);
+    background-color: rgb(241 31 31);
+    color: white;
+}
+
+.buscar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+
+}
+
+.buscar input {
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    &:hover {
+        outline-color: #13d409;
+    }
 }
 
 .contenedor-producto {
@@ -376,8 +399,21 @@ h3 {
 @media (min-width:768px) {
 
     /* INDEX */
-    .section-index {
-        gap: 1rem;
+    .buscar {
+        font-size: 2rem;
+    }
+
+    .buscar input {
+        padding: 0.8rem;
+    }
+
+    .campo-busqueda {
+        font-size: 1.6rem;
+    }
+
+    .no-productos {
+        font-size: 2.5rem;
+        padding: 1.5rem;
     }
 
     .contenedor-producto {
@@ -412,4 +448,18 @@ h3 {
         font-size: 3rem;
     }
 
+    /* VISTA DESKTOP */
+    @media (min-width:1024px) {
+        .titulo-productos {
+            font-size: 5rem;
+        }
+
+        .buscar {
+            font-size: 2.5rem;
+        }
+
+        .buscar input {
+            padding: 1rem;
+        }
+    }
 }
