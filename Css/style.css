@@ -405,10 +405,8 @@ h3 {
 
     .buscar input {
         padding: 0.8rem;
-    }
-
-    .campo-busqueda {
-        font-size: 1.6rem;
+        width: 20rem;
+        font-size: 1.5rem;
     }
 
     .no-productos {
@@ -459,7 +457,9 @@ h3 {
         }
 
         .buscar input {
-            padding: 1rem;
+            width: 25rem;
+            padding: 1.5rem;
+            font-size: 1.6rem;
         }
     }
 }
