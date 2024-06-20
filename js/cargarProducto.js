@@ -11,7 +11,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
 
     try {
         // Obtener la lista de productos para encontrar el ID más alto
-        const response = await fetch('https://fake-api-sage-pi.vercel.app/productos');
+        const response = await fetch('https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos');
         const productos = await response.json();
 
         // Encontrar el ID más alto
@@ -34,7 +34,7 @@ document.getElementById('formCargarProducto').addEventListener('submit', async f
         };
 
         // Enviar el nuevo producto al servidor
-        const postResponse = await fetch('https://fake-api-sage-pi.vercel.app/productos', {
+        const postResponse = await fetch('https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

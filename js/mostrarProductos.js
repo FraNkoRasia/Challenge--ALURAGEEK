@@ -71,7 +71,7 @@ function agregarEventListeners() {
 
             if (confirmacion) {
                 try {
-                    const response = await fetch(`https://fake-api-sage-pi.vercel.app/productos/${id}`, {
+                    const response = await fetch(`https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos/${id}`, {
                         method: 'DELETE',
                     });
 
@@ -171,7 +171,7 @@ function agregarEventListeners() {
         };
 
         try {
-            const response = await fetch(`https://fake-api-sage-pi.vercel.app/productos/${id}`, {
+            const response = await fetch(`https://my-json-server.typicode.com/FraNkoRasia/fake-json/productos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
